@@ -41,10 +41,15 @@ router.get('/add-book', function (req, res, next) {
 })
 
 router.post('/add-book',(req, res) => {
-    console.log(req.body);
-    console.log(req.files.Image);
-    bookHelpers.addBook(req.body,(result)=>{
-      res.render('admin/add-book')
+    //console.log(req.body);
+    //console.log(req.files.Image);
+    bookHelpers.addBook(req.body,(id)=>{
+      let image = req.files.Image
+      //console.log(id);
+      image.mv('./public/book-images/'+id+'.jpg', (err)=>{
+        if(err){console.log(err);}
+        else{res.render('admin/add-book')}
+      })
     })
   }
 )

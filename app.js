@@ -38,7 +38,7 @@ app.use(fileUpload());
 db.connect((err)=>{
   if(err) console.log('error' + err);
   else console.log('Database Connected');
-})
+}) 
 
 app.use('/', userRouter);
 app.use('/admin', adminRouter);
