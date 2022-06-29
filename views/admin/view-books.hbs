@@ -6,7 +6,6 @@
         <table class="table table-light mt-2">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Title</th>
       <th scope="col">Author</th>
       <th scope="col">Price</th>
@@ -15,13 +14,12 @@
     </tr>
   </thead>
   <tbody>
-    {{#each books}}
+    {{#each bookList}}
     <tr>
-      <th scope="row">{{@index}}</th>
-      <td>{{this.name}}</td>
-      <td>{{this.author}}</td>
-      <td>{{this.price}}</td>
-      <td><img style="width:50px; height:75px;" src="{{this.img}}" alt=""></td>
+      <td>{{this.Title}}</td>
+      <td>{{this.Author}}</td>
+      <td>{{this.Price}}</td>
+      <td><img style="width:50px; height:75px;" src="/book-images/{{this._id}}.jpg" alt=""></td>
     </tr>
     {{/each}}
   </tbody>
