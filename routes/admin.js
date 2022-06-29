@@ -22,7 +22,7 @@ router.post('/add-book',(req, res) => {
       //console.log(id);
       image.mv('./public/book-images/'+id+'.jpg', (err)=>{
         if(err){console.log(err);}
-        else{res.render('admin/add-book')}
+        else{res.render('admin/add-book', {admin: true})}
       })
     })
   }
